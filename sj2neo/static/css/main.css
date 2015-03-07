@@ -67,7 +67,7 @@
         article {
           background-color: #EFEFEF; }
 
-          pre {
+          code {
             color: white;
             background-color: #000000;
             font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono",
@@ -166,10 +166,8 @@
                                                     padding: 10px 15px;   }
                                                     p {
                                                       padding: 0 10px;   }
-                                                      pre {
-                                                        padding: 5px;   }
-                                                        .extra {
-                                                          display: none;   }
+                                                      .extra {
+                                                        display: none;   }
 }
 
 @media all and (min-width: 500px) {
