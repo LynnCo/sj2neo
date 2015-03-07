@@ -1,12 +1,19 @@
 # builtin
 # external
+import scss
 import flask
 import flask.ext.misaka as misaka
-import flask.ext.scss as scss
 
+# basic flask app
 app = flask.Flask(__name__)
+# markdown
 misaka.Misaka(app)
-scss.Scss(app, asset_dir='static')
+# scss
+with open('sj2neo/static/scss/main.scss', 'r') as infile:
+    scss_content = infile.read()
+compiled_css = scss.Scss().compile(scss_content)
+with open('sj2neo/static/css/main.css', 'w') as outfile:
+    outfile.write(compiled_css)
 
 @app.route('/')
 def index (): return flask.render_template('paths/index.html')

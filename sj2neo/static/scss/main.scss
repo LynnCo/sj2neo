@@ -46,29 +46,10 @@ $filler_medium: $grey_medium;
 $filler_light: $grey_light;
 $filler_lightest: white;
 
-// Specific Purpose
-
-$color_body_text: $filler_darkest;
-$color_body_bg: $color_primary;
-$color_header_text: $filler_darkest;
-$color_link_text: $color_accent;
-$color_nav_bg: $filler_light;
-$color_nav_box_shadow: $filler_darkest;
-$color_nav_foreground: $color_primary;
-$color_banner_bg: $filler_light;
-$color_banner_right: $filler_medium;
-$color_article_bg: $filler_light;
-$color_pre_text: $filler_lightest;
-$color_pre_bg: $filler_darkest;
-$color_code_bg: $filler_medium;
-$color_display_name: $filler_darkest;
-$color_subtext: $filler_dark;
-$color_post_meta_bottom: $filler_dark;
-
 // Fonts
 
 $font_body: 'Sniglet', cursive;
-$font_pre: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;;
+$font_code: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;;
 
 /*---------------
    HELPER CLASSES
@@ -91,7 +72,7 @@ $font_pre: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera S
 @-ms-viewport{ width: device-width; }
 
 html, body {
-    color: $color_body_text;
+    color: $filler_darkest;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -99,7 +80,7 @@ html, body {
 }
 
 body {
-    background-color: $color_body_bg;
+    background-color: $color_primary;
     overflow-x: hidden;
     font-family: $font_body;
 }
@@ -107,7 +88,7 @@ body {
 /* inline */
 
 h1, h2, h3, h4, h5, p {
-    color: $color_header_text;
+    color: $filler_darkest;
     font-family: $font_body;
     padding: 5px 15px;
 }
@@ -119,7 +100,7 @@ h1, h2 {
 
 a {
     cursor: inherit;
-    color: $color_link_text;
+    color: $color_accent;
     text-decoration: inherit;
     &:hover {
         text-decoration: underline;
@@ -130,53 +111,36 @@ a {
     display: inline-block;
 }
 
-.quirell-icon {
-    font-family: $font_quirell_icon;
-}
-
 /* nav */
 
 nav {
+    text-align: center;
     position: fixed;
     width: 100%;
-    background-color: $color_nav_bg;
-    box-shadow: 0 0 10px $color_nav_box_shadow;
-}
-
-.nav-block {
-    float: left;
-}
-
-.nav-left {
-    width: 40%;
-}
-
-.nav-mid {
-    text-align: center;
-    width: 15%;
-    margin: 0 auto;
-}
-
-.nav-right {
-    float: right;
+    background-color: $filler_light;
+    box-shadow: 0 0 10px $filler_darkest;
 }
 
 nav i {
-    color: $color_nav_foreground;
+    color: $color_primary;
+}
+
+nav {
+    font-size: 2em;
 }
 
 article {
-    background-color: $color_article_bg;
+    background-color: $filler_light;
 }
 
-pre {
-    color: $color_pre_text;
-    background-color: $color_pre_bg;
-    font-family: $font_pre;
+code {
+    color: $filler_lightest;
+    background-color: $filler_darkest;
+    font-family: $font_code;
 }
 
 p code {
-    background-color: $color_code_bg;
+    background-color: $filler_medium;
 }
 
 ul {list-style-type: square;}
@@ -197,12 +161,12 @@ blockquote {
 }
 
 .display-name {
-    color: $color_display_name;
+    color: $filler_darkest;
     font-weight: bold;
 }
 
 .subtext {
-    color: $color_subtext;
+    color: $filler_dark;
     font-size: 0.9em;
 }
 
@@ -250,20 +214,14 @@ blockquote {
     }
 
     nav {
-        padding-top: 5px;
-        height: 50px;
-        height: 11vw;
-
+        padding-top: 15px;
+        height: 40px;
         i {
             font-size: 30px;
             font-size: 10vw;
             margin-left: 15px;
             margin-right: 5px;
         }
-    }
-
-    .nav-text {
-        display: none;
     }
 
     main {
@@ -329,10 +287,9 @@ blockquote {
         padding: 0 10px;
     }
 
-    pre {
-        padding: 5px;
+    .extra {
+        display: none;
     }
-
 }
 
 /*---------------
@@ -340,42 +297,6 @@ blockquote {
 -----------------*/
 
 @media all and (min-width: 500px){
-
-    nav {
-        height: 50px;
-    }
-
-    nav i {
-        font-size: 40px;
-    }
-
-    .banner-left {
-        margin-left: 30px;
-        display: inline-block;
-        width: 20%;
-    }
-
-    .banner-right {
-        margin-left: 40px;
-        padding: 15px 30px;
-        display: inline-block;
-        width: 50%;
-    }
-
-    .img-large {
-        height: 100px;
-        width: 100px;
-    }
-
-    .img-mid {
-        height: 60px;
-        width: 60px;
-    }
-
-    .img-small {
-        height: 40px;
-        width: 40px;
-    }
 
     .post-meta-top {
         max-width: 400px;
@@ -385,12 +306,6 @@ blockquote {
     article {
         width: 70%;
     }
-
-    .banner {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
 }
 
 /*---------------
@@ -405,17 +320,15 @@ blockquote {
         padding-right: 5%;
     }
 
-    .nav-text {
-        vertical-align: middle;
-        display: inline-block;
-        font-family: $font_body;
-        font-weight: 600;
-        font-size: 1.3em;
-        height: 40px;
+    .extra {
+        display: inherit;
     }
 
     article {
         width: 40%;
     }
 
+    .extra {
+        display: inline;
+    }
 }
