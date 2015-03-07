@@ -23,15 +23,55 @@ Organization:
 */
 
 /*---------------
-    IMPORTS
+    VARIABLES
 -----------------*/
 
-// Partials
-@import "quirell/webapp/static/scss/partials/_variables.scss";
-@import "quirell/webapp/static/scss/partials/_mixins.scss";
+// Literal
+
+$purple: #554488;
+$green: #397D02;
+$grey_dark: #808080;
+$grey_medium: #D0D0D0;
+$grey_light: #EFEFEF;
+$black: #000000;
+
+// General Purpose
+
+$color_primary: $purple;
+$color_accent: $green;
+
+$filler_darkest: $black;
+$filler_dark: $grey_dark;
+$filler_medium: $grey_medium;
+$filler_light: $grey_light;
+$filler_lightest: white;
+
+// Specific Purpose
+
+$color_body_text: $filler_darkest;
+$color_body_bg: $color_primary;
+$color_header_text: $filler_darkest;
+$color_link_text: $color_accent;
+$color_nav_bg: $filler_light;
+$color_nav_box_shadow: $filler_darkest;
+$color_nav_foreground: $color_primary;
+$color_banner_bg: $filler_light;
+$color_banner_right: $filler_medium;
+$color_article_bg: $filler_light;
+$color_pre_text: $filler_lightest;
+$color_pre_bg: $filler_darkest;
+$color_code_bg: $filler_medium;
+$color_display_name: $filler_darkest;
+$color_subtext: $filler_dark;
+$color_post_meta_bottom: $filler_dark;
+
+// Fonts
+
+$font_body: 'Sniglet', cursive;
+$font_pre: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;;
 
 /*---------------
-    HELPER CLASSES
+   HELPER CLASSES
 -----------------*/
 
 .visible {opacity: 1;}
@@ -51,8 +91,9 @@ Organization:
 @-ms-viewport{ width: device-width; }
 
 html, body {
-    @extend %margin_padding_zero;
     color: $color_body_text;
+    padding: 0;
+    margin: 0;
     width: 100%;
     height: 100%;
 }
@@ -121,38 +162,7 @@ nav {
 }
 
 nav i {
-    color: $filler_light;
-}
-
-nav .button {
-    @extend %margin_padding_zero;
-    display: inline-block;
-    background-color: transparent;
-    border: none;
-}
-
-nav .button i, .nav-text, .quirell-icon {
     color: $color_nav_foreground;
-}
-
-/* main content */
-
-.banner {
-    background-color: $color_banner_bg;
-    padding: 10px 10px;
-    margin-top: 10px;
-
-    .avatar {
-    margin: 0 auto;
-    }
-}
-
-.banner-left {
-    font-size: 1.1em;
-}
-
-.banner-right {
-    background-color: $color_banner_right;
 }
 
 article {
@@ -200,22 +210,6 @@ blockquote {
     vertical-align: middle;
 }
 
-.post-meta-bottom {
-    padding: 0;
-    font-size: 1.0em;
-    margin-left: auto;
-    margin-right: auto;
-    color: $color_post_meta_bottom;
-}
-
-.post-notes {
-    display: inline-block;
-}
-
-.post-action-bar {
-    display: inline-block;
-}
-
 /*---------------------
  BASE (MOBILE) LAYOUT
 -----------------------*/
@@ -261,17 +255,11 @@ blockquote {
         height: 11vw;
 
         i {
-                font-size: 30px;
-                font-size: 10vw;
-                margin-left: 15px;
-                margin-right: 5px;
+            font-size: 30px;
+            font-size: 10vw;
+            margin-left: 15px;
+            margin-right: 5px;
         }
-    }
-
-    .quirell-icon {
-        font-size: 50px;
-        font-size: 10vw;
-        display: none;
     }
 
     .nav-text {
@@ -389,12 +377,6 @@ blockquote {
         width: 40px;
     }
 
-    .quirell-icon {
-        padding-top: 15px;
-        font-size: 50px;
-        display: inline-block;
-    }
-
     .post-meta-top {
         max-width: 400px;
         max-width: calc(95% - 60px);
@@ -436,23 +418,4 @@ blockquote {
         width: 40%;
     }
 
-}
-
-/*---------------
-    EXTERNAL
------------------*/
-
-.fa-linkedin {color: #4875B4;}
-.fa-twitter {color: #33CCFF;}
-.fa-skype {color: #12A5F4;}
-.fa-envelope {color: gray;}
-.fa-github {color: black;}
-.fa-rss-square {color: orange;}
-
-//TWITTER MADE ME DO IT >_<
-.twitter-tweet {margin-left: auto !important; margin-right: auto !important;}
-
-@font-face {
-    font-family: "Quirell";
-    src: url(../fonts/Quirell.ttf) format("truetype");
 }
