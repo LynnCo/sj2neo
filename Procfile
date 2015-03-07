@@ -1,1 +1,1 @@
-web: gunicorn sj2neo.webapp:app
+web: gunicorn sj2neo.main:app
