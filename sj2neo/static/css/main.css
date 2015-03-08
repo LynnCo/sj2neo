@@ -39,7 +39,8 @@
 
                     h1, h2 {
                       text-align: center;
-                      padding: 15px inherit; }
+                      padding: 0 inherit;
+                      line-height: normal; }
 
                       a {
                         cursor: inherit;
@@ -67,107 +68,86 @@
         article {
           background-color: #EFEFEF; }
 
-          code {
+          pre {
             color: white;
             background-color: #000000;
             font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono",
                         monospace; }
 
-            p code {
-              background-color: #D0D0D0; }
+            ul {
+              list-style-type: square; }
 
-              ul {
-                list-style-type: square; }
+              blockquote {
+                font-style: italic; }
 
-                blockquote {
-                  font-style: italic; }
+                .post-meta-top {
+                  display: inline-block;
+                  white-space: nowrap;
+                  overflow: hidden; }
 
-                  .post-meta-top {
+                  .avatar {
                     display: inline-block;
-                    white-space: nowrap;
-                    overflow: hidden; }
+                    border-radius: 20%; }
 
-                    .avatar {
-                      display: inline-block;
-                      border-radius: 20%; }
+                    .display-name {
+                      color: #000000;
+                      font-weight: bold; }
 
-                      .display-name {
-                        color: #000000;
-                        font-weight: bold; }
+                      .subtext {
+                        color: #808080;
+                        font-size: 0.9em; }
 
-                        .subtext {
-                          color: #808080;
-                          font-size: 0.9em; }
+                        .middle > * {
+                          vertical-align: middle; }
 
-                          .middle > * {
-                            vertical-align: middle; }
-
-                            @media all {
-                              html {
-                                font-size: 16px;
-                                line-height: 1.3em;   }
-                                .banner-left {
-                                  width: 75%;
-                                  margin: 0 auto;
-                                  text-align: center;   }
-                                  .banner-right {
-                                    margin-top: 10px;
-                                    border-radius: 20px;
-                                    padding: 10px 20px;   }
-                                    .img-large {
-                                      height: 80px;
-                                      width: 80px;   }
-                                      .img-mid {
-                                        height: 50px;
-                                        width: 50px;   }
-                                        .img-small {
-                                          height: 30px;
-                                          width: 30px;   }
-                                          nav {
-                                            padding-top: 15px;
-                                            height: 40px;   }
-                                            nav i {
-                                              font-size: 30px;
-                                              font-size: 10vw;
-                                              margin-left: 15px;
-                                              margin-right: 5px;   }
-                              main {
+                          @media all {
+                            html {
+                              font-size: 14px;
+                              line-height: 1.3em;   }
+                              .banner-left {
+                                width: 75%;
                                 margin: 0 auto;
-                                padding-top: 60px;   }
-                                img {
-                                  height: 160px;
-                                  width: 160px;   }
-                                  article {
-                                    width: 90%;
-                                    margin: 10px auto;
-                                    padding: 10px;
-                                    border-radius: 10px;   }
-                                    .banner {
-                                      padding-left: 15px;
-                                      padding-right: 15px;   }
-                                      .post-meta-top {
-                                        max-width: 230px;
-                                        max-width: calc(95% - 60px);
-                                        margin-left: 5px;
-                                        line-height: 1.4em;   }
-                                        .post-meta-bottom {
-                                          width: 100%;   }
-                                          .post-notes {
-                                            width: 40%;   }
-                                            .post-tags {
-                                              margin-bottom: 10px;   }
-                                              .post-action-bar {
-                                                padding-right: 20px;
-                                                float: right;
-                                                text-align: right;   }
-                                                .post-action-bar > * {
-                                                  padding: 0 10px;   }
-                                                  .content {
-                                                    padding: 10px 15px;   }
-                                                    p {
-                                                      padding: 0 10px;   }
-                                                      .extra {
-                                                        display: none;   }
+                                text-align: center;   }
+                                .banner-right {
+                                  margin-top: 10px;
+                                  border-radius: 20px;
+                                  padding: 10px 20px;   }
+                                  .img-large {
+                                    height: 80px;
+                                    width: 80px;   }
+                                    .img-mid {
+                                      height: 50px;
+                                      width: 50px;   }
+                                      .img-small {
+                                        height: 30px;
+                                        width: 30px;   }
+                                        nav {
+                                          padding-top: 15px;
+                                          height: 40px;   }
+                                          nav i {
+                                            font-size: 30px;
+                                            font-size: 10vw;
+                                            margin-left: 15px;
+                                            margin-right: 5px;   }
+                            main {
+                              margin: 0 auto;
+                              padding-top: 60px;   }
+                              img {
+                                height: 160px;
+                                width: 160px;   }
+                                article {
+                                  width: 90%;
+                                  margin: 10px auto;
+                                  padding: 10px;
+                                  border-radius: 10px;   }
+                                  pre {
+                                    padding: 10px 15px;   }
+                                    .content {
+                                      padding: 10px 15px;   }
+                                      p {
+                                        padding: 0 10px;   }
+                                        .extra {
+                                          display: none;   }
 }
 
 @media all and (min-width: 500px) {

@@ -1,6 +1,31 @@
 {% extends "message.html" %}
 {% block article %}
 
-im working on it gimme a sec
+# WhiteOut* on BlackOutDay
+
+\* terrible pun, sorry
+
+Basic implementation of a thing to try and make sure you aren't following any of the racists posting in whiteout day. Probably too basic though, as it just unfollows anyone you are following who is posting in the tag >_>
+
+	MATCH (you:USER)-[:FOLLOWING]->(racist:USER)
+		-[:POSTED]->(:POST {tag:#WhiteOutDay})
+	DELETE following
+
+This is no good! Too many false positives! You have no way of knowing if the people posting in the tag are white people being racist and harassing black people. How could you actually tell, programmatically, whether or not someone is dumping Nazi propaganda into a tag or protesting the presence of Nazi propaganda? But nothing ventured nothing gained, so how about this:
+
+	# this line is actually python
+	slurs = ['list', 'of', 'racial', 'slurs']
+
+	MATCH (koolaidman)-[:POSTED]->(badpost {tag:'#WhiteOutDay'})
+	MATCH (badpost)-[:MENTIONS]->(you:USER)
+	WHERE badpost.content in slurs and
+		NOT (you)-[:FOLLOWS]->(koolaidman)
+	CREATE (you)-[:MUTE]->(koolaidman)
+
+So, us you come into my mentions using a known racist tag and also racial slurs, you are probably a racist. If I don't know you and you are using the exact same wording that racists have used, then I don't want to hear from you. Even if you aren't a racist, I don't want my mentions filled with slurs from random people! Even if they aren't malicious.
+
+Further reading:
+
+![My #BlackOutDay selfie](http://i.imgur.com/4egzctxb.jpg)
 
 {% endblock %}

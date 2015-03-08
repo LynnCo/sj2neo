@@ -95,7 +95,8 @@ h1, h2, h3, h4, h5, p {
 
 h1, h2 {
     text-align: center;
-    padding: 15px inherit;
+    padding: 0 inherit;
+    line-height: normal;
 }
 
 a {
@@ -133,14 +134,10 @@ article {
     background-color: $filler_light;
 }
 
-code {
+pre {
     color: $filler_lightest;
     background-color: $filler_darkest;
     font-family: $font_code;
-}
-
-p code {
-    background-color: $filler_medium;
 }
 
 ul {list-style-type: square;}
@@ -182,7 +179,7 @@ blockquote {
 @media all {
 
     html {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.3em;
     }
 
@@ -241,42 +238,8 @@ blockquote {
         border-radius: 10px;
     }
 
-    .banner {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .post-author {
-    }
-
-    .post-meta-top {
-        max-width: 230px;
-        max-width: calc(95% - 60px);
-        margin-left: 5px;
-        line-height: 1.4em;
-    }
-
-    .post-meta-bottom {
-        width: 100%;
-    }
-
-    .post-notes {
-        width: 40%;
-    }
-
-    .post-tags {
-        margin-bottom: 10px;
-    }
-
-    .post-action-bar {
-
-        padding-right: 20px;
-        float: right;
-        text-align: right;
-    }
-
-    .post-action-bar > * {
-        padding: 0 10px;
+    pre {
+        padding: 10px 15px;
     }
 
     .content {
